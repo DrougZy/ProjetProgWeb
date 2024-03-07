@@ -1,0 +1,31 @@
+.centrer{
+    text-align : center;
+    align-items: center;
+}
+
+body{
+    background-color: lightblue;
+}
+
+#listeScrutins{
+    margin-top : 5em;
+    margin-left : 5em;
+    margin-right : 5em;
+    padding : 10px;
+}
+
+#contents2{
+    margin-top : 5em;
+    margin-left : 1em;
+    padding : 5px;
+
+}
+
+.buttonDetail{
+    margin-left : 20px;
+
+}
+
+.enLigne{
+    display : flex;
+}

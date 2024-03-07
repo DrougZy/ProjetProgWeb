@@ -1,0 +1,20 @@
+{
+
+    "id" : 2004, 
+    "username" : "DrougZy",
+    "password" : "j'aime la vie",  
+
+    "scrutins" : [
+        {
+        "id" : 0, 
+            "nom" : "scrutin 0"
+        },
+
+        {
+            "id" : 1, 
+            "nom" : "scrutin 1"
+        }
+
+    ]
+
+}
