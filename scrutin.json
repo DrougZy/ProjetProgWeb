@@ -1,14 +1,7 @@
 [
     {
         "id" : 0,
+        "nom" : "TEST",
         "nbrVotant" : 15
-
-
-    },
-    
-    
-    { 
-        "id" : 1, 
-        "nbrVotant" : 10
     }
 ]

@@ -22,8 +22,8 @@
 
       <div class="enLigne">
 
-        <div id="listeScrutins" class="border border-5">
-          <h4> Liste de mes scrutins </h4>
+        <div id="contents1" class="border border-5">
+          <h5> Liste de mes scrutins </h4>
           <br>
 
           <?php
@@ -32,22 +32,22 @@
             $data = json_decode($jsonString, true);
 
             foreach($scrutins = $data["scrutins"] as $prop => $val){
-              echo "<p> ".($prop+1).". Nom : ".$val["nom"]." <input type=\"button\" class=\"buttonDetail\" onclick = \"detailScrutin(".$val["id"].")\"value=\"Detail\"> </p>";
+              echo "<p> ".($prop+1).". Nom : ".$val["nom"]." <input type=\"button\" class=\"buttonDetail\" onclick = \"detailScrutin(".$val["id"].")\" value=\"Detail\"> </p>";
             }
       
 
           ?>
 
+          <br>
+
+          <div id="NewScrutin">
+            <h5> Création d'un nouveau Scrutin</h5>
+            <input type="button" onclick="creationScrutin()" value="OH OUI">
+          </div>
+
         </div>
 
         <div id="contents2" class="border border-5">
-        
-          <?php
-            $jsonString = file_get_contents("data.json");
-            $data = json_decode($jsonString, true);
-
-            
-          ?>
             
         </div>
       </div>
