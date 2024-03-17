@@ -1,7 +1,12 @@
 [
     {
-        "id" : 0,
-        "nom" : "TEST",
-        "nbrVotant" : 15
+        "id":1,"nom":"Les \u00e9trangers",
+        "question":"Pour ou contre ?",
+        "nbrVotant":8,
+        "Choix": [
+            "Pour ",
+            "Contre",
+            "Menfou pas demand\u00e9"
+        ]
     }
 ]

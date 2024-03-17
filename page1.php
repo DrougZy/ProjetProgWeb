@@ -42,7 +42,7 @@
 
           <div id="NewScrutin">
             <h5> Création d'un nouveau Scrutin</h5>
-            <input type="button" onclick="creationScrutin()" value="OH OUI">
+            <input type="button" onclick="creationScrutin()" value="Créer">
           </div>
 
         </div>
@@ -50,6 +50,11 @@
         <div id="contents2" class="border border-5">
             
         </div>
+
+        <div id="testaffiche">
+        
+        </div>
+
       </div>
     </div>
 

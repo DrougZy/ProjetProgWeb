@@ -29,4 +29,8 @@ body{
 .enLigne{
     display : flex;
 }
+
+#messageErreurNouveauFormulaire{
+    color: red;
+}
  
