@@ -1,10 +1,58 @@
+body
+{
+    background-color: #add8e6; /* Bleu clair */
+}
+
+div#logs
+{
+    margin-top: 60px;
+    background-color: #77a7b8;
+    text-align: center;
+
+}
+
+h1#connect
+{
+    
+    margin: auto;
+    width: 50%;
+    border : 4px solid rgba(0, 0, 0, 0.800);
+    padding: 10px;
+    margin-top: 100px;
+    background-color: rgb(111, 185, 157);
+    color: black;
+    text-align: center;
+}
+.form-group
+{
+    margin-top: 40px;
+}
+
+#form-group-validate
+{
+    margin-top: 20px;
+    text-align: right;
+}
+
+div.block
+{
+    display: block;
+    text-align: center;
+}
+.aligner
+{
+    vertical-align: right;
+}
+
+#tableFullPage
+{
+    display: block;
+    text-align: left;
+}
+
 .centrer{
     text-align : center;
     align-items: center;
-}
-
-body{
-    background-color: lightblue;
 }
 
 #contents1{
@@ -33,4 +81,3 @@ body{
 #messageErreurNouveauFormulaire{
     color: red;
 }
- 

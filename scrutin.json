@@ -1,12 +1,23 @@
 [
     {
-        "id":1,"nom":"Les \u00e9trangers",
-        "question":"Pour ou contre ?",
-        "nbrVotant":8,
+        "id": 1,
+        "nom": "Les étrangers",
+        "question": "Pour ou contre ?",
+        "nbrVotant": 8,
         "Choix": [
             "Pour ",
             "Contre",
-            "Menfou pas demand\u00e9"
+            "Menfou pas demandé"
+        ]
+    },
+    {
+        "id": 2,
+        "nom": "test",
+        "question": "salut ?",
+        "nbrVotant": 1888,
+        "Choix": [
+            "oui",
+            "non"
         ]
     }
 ]

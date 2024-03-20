@@ -1,40 +1,41 @@
 <?php
-
 // Chemin du fichier JSON
 $filePath = 'scrutin.json';
 
 // Lire le contenu actuel du fichier JSON
 $currentData = file_get_contents($filePath);
-
-// Vérifier si la lecture du fichier a réussi
 if ($currentData === false) {
     die('Impossible de lire le fichier JSON.');
 }
-
-// Convertir le JSON en tableau associatif PHP
 $currentDataArray = json_decode($currentData, true);
-
-// Vérifier si le décodage JSON a réussi
 if ($currentDataArray === null) {
     die('Impossible de décoder le JSON.');
 }
 
+// incrémenter l'id
+$maxId = 0;
+foreach ($currentDataArray as $data) {
+    if ($data['id'] > $maxId) {
+        $maxId = $data['id'];
+    }
+}
+$newId = $maxId + 1;
 
-
-// Nouvelles données à ajouter
+// Nouvelles données à ajouter avec le nouvel ID
 $newData = array(
-    "id" => 1,
+    "id" => $newId,
     "nom" => $_POST["nom"],
     "question" => $_POST["question"],
     "nbrVotant" => intval($_POST["nbr"]),
     "Choix" =>  $_POST["tableauProp"]
 );
 
-// Ajouter les nouvelles données au tableau existant
-$currentDataArray[] = $newData;
+$newDataArray = array($newData);
+// Fusionner les nouveaux tableaux de données avec les données existantes
+$newDataArray = array_merge($currentDataArray, $newDataArray);
 
 // Convertir le tableau en format JSON
-$jsonData = json_encode($currentDataArray);
+$jsonData = json_encode($newDataArray, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 
 // Écrire les données JSON dans le fichier
 if (file_put_contents($filePath, $jsonData) === false) {
