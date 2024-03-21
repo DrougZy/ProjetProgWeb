@@ -14,8 +14,8 @@
                     </p>
 
                     <p>
-                    Entrez le nombre de participant (entre 1 et 20) :  
-                    <input type=\"number\" id=\"input-nbr-formulaire\" max=\"20\" min=\"1\">
+                    Entrez le nombre de participant (entre 1 et 100) :  
+                    <input type=\"number\" id=\"input-nbr-formulaire\" max=\"100\" min=\"1\">
                     </p>
 
                     <br>

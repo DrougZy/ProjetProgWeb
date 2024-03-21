@@ -1,12 +1,68 @@
 [
     {
-        "id":1,"nom":"Les \u00e9trangers",
-        "question":"Pour ou contre ?",
-        "nbrVotant":8,
+        "id": 1,
+        "CID": "tom",
+        "nom": "Les arbres",
+        "question": "Pour ou contre ?",
+        "nbrVotant": 8,
         "Choix": [
             "Pour ",
             "Contre",
-            "Menfou pas demand\u00e9"
+            "Menfou pas demandé"
+        ]
+    },
+    {
+        "id": 2,
+        "CID": "r",
+        "nom": "test",
+        "question": "salut ?",
+        "nbrVotant": 1888,
+        "Choix": [
+            "oui",
+            "non"
+        ]
+    },
+    {
+        "id": 3,
+        "CID": "tom",
+        "nom": "Le chomage",
+        "question": "En vrai c'est marrant",
+        "nbrVotant": 7,
+        "Choix": [
+            "oui",
+            "OUI"
+        ]
+    },
+    {
+        "id": 4,
+        "CID": "tom",
+        "nom": "MonMaster",
+        "question": "Ca pu du cul",
+        "nbrVotant": 37,
+        "Choix": [
+            "c'est nul",
+            "c'est tres nul"
+        ]
+    },
+    {
+        "id": 5,
+        "CID": "tom",
+        "nom": "Les jiufs",
+        "question": "uwu ?",
+        "nbrVotant": 46,
+        "Choix": [
+            "contre les nazis"
+        ]
+    },
+    {
+        "id": 6,
+        "CID": "r",
+        "nom": "$2y$10$hdksm4ml9tG3Q.e9uqBu.OBtlqGRpZYXOswQZ\/ts8EPLJINK1wMEa",
+        "question": "Oui ?",
+        "nbrVotant": 88,
+        "Choix": [
+            "non",
+            "oui"
         ]
     }
 ]

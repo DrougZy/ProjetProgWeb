@@ -1,0 +1,47 @@
+[
+    {
+        "uid": "ryan",
+        "password": "ryan", 
+        "ScrutinVotant" : []
+    },
+    {
+        "uid": "tom",
+        "password": "tom", 
+        "ScrutinVotant" : [1, 2, 3]
+    },
+    {
+        "uid": "r",
+        "password": "r", 
+        "ScrutinVotant" : [6]
+    },
+    {
+        "uid": "rap",
+        "password": "rap", 
+        "ScrutinVotant" : []
+    },
+    {
+        "uid": "tommuuu",
+        "password": "tom", 
+        "ScrutinVotant" : []
+    },
+    {
+        "uid": "rer",
+        "password": "aa", 
+        "ScrutinVotant" : []
+    },
+    {
+        "uid": "glouglou",
+        "password": "bibo", 
+        "ScrutinVotant" : []
+    },
+    {
+        "uid": "glou",
+        "password": "bibo", 
+        "ScrutinVotant" : []
+    },
+    {
+        "uid": "margo",
+        "password": "marg", 
+        "ScrutinVotant" : []
+    }
+]
