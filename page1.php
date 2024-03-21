@@ -26,16 +26,19 @@ echo "<button type=\"button\" class=\"btn btn-danger\" onclick=\"logBout()\">Se 
               if ($ui === $val["uid"]){
                 $listeScrutin = $val["ScrutinVotant"];
               }
+
             }
 
             $jsonStringScrutin = file_get_contents("scrutin.json");
             $dataScrutin = json_decode($jsonStringScrutin, true);
 
+          $indice = 1;
+
             foreach($dataScrutin as $prop => $val)
             {
               if (in_array($val["id"], $listeScrutin)){
 
-                echo "<p> ".($prop+1).
+                echo "<p> ".($indice++).
                 ". Nom : ".
                 $val["nom"].
                 " <input type=\"button\" class=\"buttonDetail\" onclick = \"detailScrutin(".
