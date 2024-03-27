@@ -3,7 +3,6 @@ session_start();
     if($_POST["disconnected"])
     {
         session_unset();
-        echo "trop rigolo";
     }
     echo 
     '

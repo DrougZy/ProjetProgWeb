@@ -117,8 +117,10 @@ function loadPeopleResearch()
 {
   $.ajax( {
     url: "peopleResearch.php",
-    type : "POST"
-    //data:{"name": $("#name").val()}
+    type : "POST",
+    data:{
+      stringSearched: $("#searchUsers").val()
+  }
   })
   .done(function(msg) {
     $("#contents").html(msg);
@@ -131,15 +133,19 @@ function loadPeopleResearch()
 
 function assignUserToVote()
 {
-  $.ajax( {
+  // TODO
+
+  /*$.ajax( {
     type : "POST",
     url: "peopleResearch.php",
-    data:{stringSearched: $("#searchUsers").val()}
+    
   })
-  .done(function(msg) {
-    $("#contents").html(msg);
+  .done(function(msg)*/ 
+  
+    $("#contents").html("données enregistré mais pas la liste des personnes");
+    validateUsers();
     //console.log(msg);
-  })
+  
   
 }
 
@@ -194,8 +200,9 @@ function etape1NewForm(){
              "tableauProp": Choix
             }
   })
-  .done(function(){
-
+  .done(function(msg){
+    console.log(msg);
+    loadPeopleResearch();
   })
   .fail(function() {
       alert("erreur sur l épate 1 de la création d un formulaire");
@@ -233,3 +240,39 @@ function ajoutChoix(){
 
   $("#input-ajoute-choix").val("");
 }
+
+var selectedUsers = []; // Tableau pour stocker les utilisateurs sélectionnés
+    
+function addUserToSelection(userId) {
+  
+    if(!selectedUsers.includes(userId)){
+      console.log("pas déja dans la liste");
+     // Ajouter l'ID de l'utilisateur sélectionné au tableau
+      selectedUsers.push(userId)
+
+    }
+    else 
+    {
+      console.log("déja dans la liste");
+      selectedUsers = selectedUsers.filter((word) => word != userId);
+    }
+    console.log(selectedUsers.length);
+}
+
+function validateUsers() {
+
+  selectedUsers.forEach((element) => console.log(element));
+  $.ajax({
+    method: "POST", 
+    url: "savePeople.php", 
+    data: {
+           "t":selectedUsers
+          }
+})
+.done(function(){
+  console.log("Datas saved");
+})
+.fail(function() {
+    alert("erreur sur l épate 1 de la création d un formulaire");
+})
+} 

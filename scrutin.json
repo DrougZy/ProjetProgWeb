@@ -2,22 +2,33 @@
     {
         "id": 1,
         "nom": "Les étrangers",
+        "CID": "étrangers",
         "question": "Pour ou contre ?",
         "nbrVotant": 8,
         "Choix": [
             "Pour ",
             "Contre",
             "Menfou pas demandé"
-        ]
+        ],
+        "results": [
+            1,
+            1,
+            1
+        ],
+        "votants": []
     },
     {
         "id": 2,
-        "nom": "test",
-        "question": "salut ?",
-        "nbrVotant": 1888,
+        "nom": "azer",
+        "CID": "ryan",
+        "question": "azera",
+        "nbrVotant": 1,
         "Choix": [
-            "oui",
-            "non"
+            "er"
+        ],
+        "votants": [
+            "glouglou",
+            "rer"
         ]
     }
 ]

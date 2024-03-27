@@ -2,7 +2,7 @@
 
     $html = "<h5> Nouveau Scrutin </h5>";
 
-    $html .= " <form onsubmit=\"etape1NewForm()\">
+    $html .= "
                     <p>
                     Entrez le nom du Sondage : 
                     <input type=\"text\" id=\"input-nom-formulaire\"placeholder=\"Le nom...\" autocomplete=\"off\" >
@@ -27,12 +27,12 @@
                     </div>
 
                     <br>
-                    <input type=\"submit\" value=\"Valider\" />
+                    <input type=\"button\" onclick='etape1NewForm()' value=\"Valider\" />
 
                     <div id=\"messageErreurNouveauFormulaire\">
                     </div>
 
-                </form>
+                
                 ";
 
     echo $html;

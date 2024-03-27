@@ -1,4 +1,5 @@
 <?php 
+
     echo "<div class ='block'>";
     echo 'Rechercher : <input type="text" id = "searchUsers" placeholder ="ryan"> 
     <input class ="btn btn-light" type="button" value ="Search" onclick ="assignUserToVote()">
@@ -21,8 +22,8 @@
             </tr>";
     }
     echo "</tbody></table>";*/
+
     $html = "";
-   
     $html .= "<table id ='tableFullPage'><thead>Quels utilisateurs souhaitez vous ajouter a sondage : </thead><tbody  id ='tableFullPage'>";
     $bool = false;
     if(isset($_POST["stringSearched"]))
@@ -33,7 +34,7 @@
             if(str_contains(strtolower($value["uid"]),strtolower( $string) ))
             {
                 $html .= "<tr><td>Login :"
-                .$value["uid"]."</td>  <td class =\"aligner\"><input class=\"aligner\" type=\"checkbox\" id=\"user\"</td></tr>";
+                .$value["uid"]."</td>  <td class =\"aligner\"><input class=\"aligner\" type=\"checkbox\" onclick=\"addUserToSelection(\"".$value["uid"]."\")\" id=\"user\"</td></tr>";
             }
         }
     }
@@ -41,7 +42,7 @@
         foreach ($filedata as $idx => $value) 
         {
             $html .= "<tr><td>Login :"
-            .$value["uid"]."</td>  <td class =\"aligner\"><input class=\"aligner\" type=\"checkbox\" id=\"user\"</td></tr>";
+            .$value["uid"]."</td>  <td class =\"aligner\"><input class=\"aligner\" type=\"checkbox\" onclick=\"addUserToSelection('".$value["uid"]."')\" id=\"user\"</td></tr>";
         }
     }
     $html .= "</tbody></table>";

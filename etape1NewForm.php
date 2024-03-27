@@ -1,9 +1,8 @@
 <?php
 // Chemin du fichier JSON
-$filePath = 'scrutin.json';
-
+session_start();
 // Lire le contenu actuel du fichier JSON
-$currentData = file_get_contents($filePath);
+$currentData = file_get_contents('scrutin.json');
 if ($currentData === false) {
     die('Impossible de lire le fichier JSON.');
 }
@@ -14,15 +13,21 @@ if ($currentDataArray === null) {
 
 // incrémenter l'id
 $maxId = 0;
-foreach ($currentDataArray as $data) {
+foreach ($currentDataArray as $k => $data) {
     if ($data['id'] > $maxId) {
         $maxId = $data['id'];
     }
 }
-$newId = $maxId + 1;
 
+$_SESSION["newId"] = $maxId + 1;
+$_SESSION["nomQuest"] =$_POST["nom"];
+$_SESSION["question"]  = $_POST["question"];
+$_SESSION["nbrVotant"] = intval($_POST["nbr"]);
+$_SESSION["choix"] =  $_POST["tableauProp"];
+
+echo $_SESSION["newId"] . $_SESSION["nomQuest"] . $_SESSION["question"] ;
 // Nouvelles données à ajouter avec le nouvel ID
-$newData = array(
+/*$newData = array(
     "id" => $newId,
     "nom" => $_POST["nom"],
     "question" => $_POST["question"],
@@ -41,6 +46,6 @@ $jsonData = json_encode($newDataArray, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICOD
 if (file_put_contents($filePath, $jsonData) === false) {
     die('Impossible d\'écrire dans le fichier JSON.');
 }
-
+*/
 echo 'Les nouvelles données ont été ajoutées avec succès dans le fichier JSON.  '.$_POST["nbrProp"];
 ?>
