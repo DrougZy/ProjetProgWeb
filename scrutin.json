@@ -1,58 +1,70 @@
 [
     {
         "id": 1,
-        "CID": "tom",
         "nom": "Les arbres",
+        "CID": "arbre",
         "question": "Pour ou contre ?",
         "nbrVotant": 8,
+        "dateFin": "2004-04-18",
         "Choix": [
             "Pour ",
             "Contre",
             "Menfou pas demandé"
-        ]
+        ],
+        "results": [
+            1,
+            1,
+            1
+        ],
+        "votants": []
     },
     {
         "id": 2,
-        "CID": "r",
-        "nom": "test",
-        "question": "salut ?",
-        "nbrVotant": 1888,
+        "nom": "azer",
+        "CID": "ryan",
+        "question": "azera",
+        "nbrVotant": 1,
+        "dateFin": "2004-04-18",
         "Choix": [
-            "oui",
-            "non"
+            "er"
+        ],
+        "votants": [
+            "glouglou",
+            "rer"
         ]
     },
     {
         "id": 3,
+        "nom": "Test",
         "CID": "tom",
-        "nom": "Le chomage",
-        "question": "En vrai c'est marrant",
-        "nbrVotant": 7,
+        "question": "Ca marche",
+        "nbrVotant": 12,
+        "dateFin": "2004-04-18",
         "Choix": [
-            "oui",
-            "OUI"
+            "oui logique",
+            "bien évidemment"
+        ],
+        "votants": [
+            "tom",
+            "ryan",
+            "r"
         ]
     },
     {
         "id": 4,
-        "CID": "tom",
-        "nom": "MonMaster",
-        "question": "Ca pu du cul",
-        "nbrVotant": 37,
-        "Choix": [
-            "c'est nul",
-            "c'est tres nul"
-        ]
-    },
-    {
-        "id": 5,
+        "nom": "Test Date",
         "CID": "r",
-        "nom": "tkt",
-        "question": "Oui ?",
-        "nbrVotant": 88,
+        "question": "OUI ?",
+        "nbrVotant": 12,
+        "dateFin": "2004-04-18",
         "Choix": [
-            "non",
-            "oui"
+            "oui",
+            "nan"
+        ],
+        "votants": [
+            "tom",
+            "r",
+            "ryan"
         ]
     }
 ]

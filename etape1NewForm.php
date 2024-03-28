@@ -1,10 +1,8 @@
 <?php
-session_start();
 // Chemin du fichier JSON
-$filePath = 'scrutin.json';
-
+session_start();
 // Lire le contenu actuel du fichier JSON
-$currentData = file_get_contents($filePath);
+$currentData = file_get_contents('scrutin.json');
 if ($currentData === false) {
     die('Impossible de lire le fichier JSON.');
 }
@@ -15,20 +13,27 @@ if ($currentDataArray === null) {
 
 // incrémenter l'id
 $maxId = 0;
-foreach ($currentDataArray as $data) {
+foreach ($currentDataArray as $k => $data) {
     if ($data['id'] > $maxId) {
         $maxId = $data['id'];
     }
 }
-$newId = $maxId + 1;
 
+$_SESSION["newId"] = $maxId + 1;
+$_SESSION["nomQuest"] =$_POST["nom"];
+$_SESSION["question"]  = $_POST["question"];
+$_SESSION["nbrVotant"] = intval($_POST["nbr"]);
+$_SESSION["choix"] =  $_POST["tableauProp"];
+$_SESSION["dateFin"] = $_POST["dateFin"];
+
+echo $_SESSION["newId"] . $_SESSION["nomQuest"] . $_SESSION["question"] ;
 // Nouvelles données à ajouter avec le nouvel ID
 $newData = array(
     "id" => $newId,
-    "CID" => $_SESSION["uid"],
-    "nom" => $_POST["nom"], //password_hash($_POST["nom"], PASSWORD_DEFAULT),
+    "nom" => $_POST["nom"],
     "question" => $_POST["question"],
     "nbrVotant" => intval($_POST["nbr"]),
+    "dateFin" => $_POST["dateFin"],
     "Choix" =>  $_POST["tableauProp"]
 );
 

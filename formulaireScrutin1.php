@@ -2,7 +2,7 @@
 
     $html = "<h5> Nouveau Scrutin </h5>";
 
-    $html .= " <form onsubmit=\"etape1NewForm()\">
+    $html .= "
                     <p>
                     Entrez le nom du Sondage : 
                     <input type=\"text\" id=\"input-nom-formulaire\"placeholder=\"Le nom...\" autocomplete=\"off\" >
@@ -14,9 +14,15 @@
                     </p>
 
                     <p>
-                    Entrez le nombre de participant (entre 1 et 100) :  
-                    <input type=\"number\" id=\"input-nbr-formulaire\" max=\"100\" min=\"1\">
+                    Entrez le nombre de participant (entre 1 et 20) :  
+                    <input type=\"number\" id=\"input-nbr-formulaire\" max=\"20\" min=\"1\">
                     </p>
+
+                    <p>
+                    Entrez la date de fin du scrutin :
+                    <input type =\"date\" id=\"input-date-formulaire\">
+                    </p>
+
 
                     <br>
                     <div id=\"nouveauChoix\">
@@ -27,12 +33,12 @@
                     </div>
 
                     <br>
-                    <input type=\"submit\" value=\"Valider\" />
+                    <input type=\"button\" onclick='etape1NewForm()' value=\"Valider\" />
 
                     <div id=\"messageErreurNouveauFormulaire\">
                     </div>
 
-                </form>
+                
                 ";
 
     echo $html;

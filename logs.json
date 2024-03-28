@@ -1,47 +1,48 @@
 [
     {
+        "id" : 0,
         "uid": "ryan",
-        "password": "ryan", 
-        "ScrutinVotant" : []
+        "password": "ryan"
+        
     },
     {
+        "id" : 1,
         "uid": "tom",
-        "password": "tom", 
-        "ScrutinVotant" : [1, 2, 3]
+        "password": "tom"
     },
     {
+        "id" : 2,
         "uid": "r",
-        "password": "r", 
-        "ScrutinVotant" : [1, 5]
+        "password": "r"
     },
     {
+        "id" : 3,
         "uid": "rap",
-        "password": "rap", 
-        "ScrutinVotant" : []
+        "password": "rap"
     },
     {
+        "id" : 4,
         "uid": "tommuuu",
-        "password": "tom", 
-        "ScrutinVotant" : []
+        "password": "tom"
     },
     {
+        "id" : 5,
         "uid": "rer",
-        "password": "aa", 
-        "ScrutinVotant" : []
+        "password": "aa"
     },
     {
+        "id" : 6,
         "uid": "glouglou",
-        "password": "bibo", 
-        "ScrutinVotant" : []
+        "password": "bibo"
     },
     {
+        "id" : 7,
         "uid": "glou",
-        "password": "bibo", 
-        "ScrutinVotant" : []
+        "password": "bibo"
     },
     {
+        "id" : 8,
         "uid": "margo",
-        "password": "marg", 
-        "ScrutinVotant" : []
+        "password": "marg"
     }
 ]

@@ -1,5 +1,5 @@
 <?php 
-
+    
     $username = $_POST["username"];
     $mdp1 = $_POST["mdp1"];
     $mdp2 = $_POST["mdp2"];
@@ -15,6 +15,7 @@
         }
         else 
         {
+
             $oldJson = file_get_contents('logs.json');
             $oldData = json_decode($oldJson, true);
             $oldData[] = $newData;

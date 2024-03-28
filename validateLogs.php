@@ -26,6 +26,10 @@ foreach ($filedata as $idx => $value)
 }; 
 if($gbool)
 {
-    echo "non non non";
+    echo '
+    Echec de la connexion
+    </br>
+        <button type="button" class="btn btn-primary" onclick ="loadIndexPage(true)">Retour</button>
+        <button type="button" class="btn btn-primary" onclick ="loadConnectPage()">Se reconnecter</button>';
 }
 ?>

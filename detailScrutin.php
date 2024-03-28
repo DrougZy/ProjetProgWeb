@@ -28,7 +28,11 @@
             echo "</table>";
 
 
-            echo "<p> Nombre de votant au total : ".$val["nbrVotant"]."</p>";
+            echo "<p> Nombre de votant au total : ".$val["nbrVotant"]."</p>
+            
+                <p>Date de Fin du scrution : ".$val["dateFin"]."</p>
+            
+            ";
         }
     }
 

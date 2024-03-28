@@ -15,35 +15,22 @@ echo "<button type=\"button\" class=\"btn btn-danger\" onclick=\"logBout()\">Se 
           <br>
         ";
           
-            $ui = $_SESSION["uid"];
 
-            $jsonStringUtilisateur = file_get_contents("logs.json");
-            $dataUtilisateur = json_decode($jsonStringUtilisateur, true);
+            $jsonString = file_get_contents("scrutin.json");
+            $data = json_decode($jsonString, true);
 
-            $listeScrutin = array();
-
-            foreach($dataUtilisateur as $prop => $val){
-              if ($ui === $val["uid"]){
-                $listeScrutin = $val["ScrutinVotant"];
-              }
-
-            }
-
-            $jsonStringScrutin = file_get_contents("scrutin.json");
-            $dataScrutin = json_decode($jsonStringScrutin, true);
-
-          $indice = 1;
-
-            foreach($dataScrutin as $prop => $val)
+            $i = 1;
+            foreach($data as $prop => $val)
             {
-              if (in_array($val["id"], $listeScrutin)){
+              if (in_array($_SESSION["uid"],$val["votants"])){
 
-                echo "<p> ".($indice++).
+                echo "<p> ".($i).
                 ". Nom : ".
                 $val["nom"].
                 " <input type=\"button\" class=\"buttonDetail\" onclick = \"detailScrutin(".
                 $val["id"].
                 ")\" value=\"Detail\"> </p>";
+                $i++;
               }
             }
          

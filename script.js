@@ -117,8 +117,10 @@ function loadPeopleResearch()
 {
   $.ajax( {
     url: "peopleResearch.php",
-    type : "POST"
-    //data:{"name": $("#name").val()}
+    type : "POST",
+    data:{
+      stringSearched: $("#searchUsers").val()
+  }
   })
   .done(function(msg) {
     $("#contents").html(msg);
@@ -131,15 +133,22 @@ function loadPeopleResearch()
 
 function assignUserToVote()
 {
+  // TODO
+
   $.ajax( {
     type : "POST",
     url: "peopleResearch.php",
-    data:{stringSearched: $("#searchUsers").val()}
+    
   })
-  .done(function(msg) {
-    $("#contents").html(msg);
+  .done(function(msg){
+    $("#contents").html("données enregistré mais pas la liste des personnes");
+    validateUsers();
+  })
+  .fail(function(){
+    console.log("Erreur sur l'ajout des votant");
+  })
     //console.log(msg);
-  })
+  
   
 }
 
@@ -178,28 +187,32 @@ function etape1NewForm(){
   var1 = $("#input-nom-formulaire").val();
   var2 = $("#input-question-formulaire").val();
   var3 = $("#input-nbr-formulaire").val();
+  var4 = $("#input-date-formulaire").val();
 
-  for(let i = 1; i <= nbrChoix; i++){
-      $("#contents2").html($("#choix1").val());
-  }
+  if ( new Date() < var4){
   
-  $.ajax({
-      method: "POST", 
-      url: "etape1NewForm.php", 
-      data: {
-             "nom":var1,
-             "question": var2,
-             "nbr":var3, 
-             "nbrProp": nbrChoix, 
-             "tableauProp": Choix
-            }
-  })
-  .done(function(){
-
-  })
-  .fail(function() {
-      alert("erreur sur l épate 1 de la création d un formulaire");
-  })
+    $.ajax({
+        method: "POST", 
+        url: "etape1NewForm.php", 
+        data: {
+              "nom":var1,
+              "question": var2,
+              "nbr":var3, 
+              "nbrProp": nbrChoix, 
+              "tableauProp": Choix,
+              "dateFin" :var4
+              }
+    })
+    .done(function(msg){
+      console.log(msg);
+      loadPeopleResearch();
+    })
+    .fail(function() {
+        alert("erreur sur l épate 1 de la création d un formulaire");
+    })
+  } else {
+    $("#messageErreurNouveauFormulaire").html("Date non conforme");
+  }
 }
 
 
@@ -233,3 +246,39 @@ function ajoutChoix(){
 
   $("#input-ajoute-choix").val("");
 }
+
+var selectedUsers = []; // Tableau pour stocker les utilisateurs sélectionnés
+    
+function addUserToSelection(userId) {
+  
+    if(!selectedUsers.includes(userId)){
+      console.log("pas déja dans la liste");
+     // Ajouter l'ID de l'utilisateur sélectionné au tableau
+      selectedUsers.push(userId)
+
+    }
+    else 
+    {
+      console.log("déja dans la liste");
+      selectedUsers = selectedUsers.filter((word) => word != userId);
+    }
+    console.log(selectedUsers.length);
+}
+
+function validateUsers() {
+
+  selectedUsers.forEach((element) => console.log(element));
+  $.ajax({
+    method: "POST", 
+    url: "savePeople.php", 
+    data: {
+           "t":selectedUsers
+          }
+})
+.done(function(msg){
+  loadIndexPage(true);
+})
+.fail(function() {
+    alert("erreur sur l épate 1 de la création d un formulaire");
+})
+} 
